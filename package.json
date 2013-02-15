@@ -1,0 +1,21 @@
+{
+    "name": "countrynames",
+    "description": "Map country names to ISO 3166-1-alpha-2 country codes and back",
+    "version": "0.1.0",
+    "author": "Hannes Gassert <hannes@gassert.ch>",
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/hannesgassert/countrynames.git"
+    },
+    "keywords": ["countries", "country names", "country codes", "iso3166"],
+    "engines": {"node": "*"},
+    "scripts": {
+        "test": "node test"
+    },
+    "licenses": [
+        {
+           "type": "MIT",
+           "url": "http: //www.opensource.org/licenses/mit-license.php"
+        }
+    ]
+}
