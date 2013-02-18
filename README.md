@@ -3,7 +3,17 @@
 Uses the data in http://www.iso.org/iso/country_names_and_code_elements_txt to map from
 country codes to country names and vice versa. Also provides lists of all names and codes.
 
-## Overview
+## Installation
+```
+npm install countrynames
+```
+
+## Tests
+```
+npm test
+```
+
+## API Overview
 
   - [exports.getCode()](#exportsgetcodeenglishstring)
   - [exports.getName()](#exportsgetnametwoletterstring)
@@ -58,3 +68,5 @@ countrynames.getAllCodes();
 countrynames.getAllCodes();
 ```
 
+## License 
+MIT
