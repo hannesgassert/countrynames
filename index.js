@@ -1,10 +1,12 @@
-var fs = require('fs');
+var fs = require('fs'),
+    path = require('path');
 
 var dataFile = 'country_names_and_code_elements_txt',
     fromCode = {},
     fromName = {};
 
-fs.readFileSync(dataFile, 'ascii')
+// Read data from ISO's file
+fs.readFileSync(path.join(__dirname, dataFile), 'ascii')
     .split('\r\n')
     .forEach(function(line) {
         var row = line.split(';'),
@@ -16,6 +18,19 @@ fs.readFileSync(dataFile, 'ascii')
             fromName[name.toUpperCase()] = code;
         }
 });
+
+// Register a number of name variants and special cases
+fromName['KOSOVO'] = fromName['KOSOVO AND METOHIJA'] = 'XK';
+fromName['MACEDONIA'] = fromName['MACEDONIA (FYROM)'] = fromName['MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF'];
+fromName['SYRIA'] = fromName['SYRIAN ARAB REPUBLIC'];
+fromName['VENEZUELA'] = fromName['VENEZUELA, BOLIVARIAN REPUBLIC OF'];
+fromName['REPUBLIC OF THE PHILIPPINES'] = fromName['PHILIPPINES'];
+fromName['UNITED STATES OF AMERICA'] = fromName['UNITED STATES'];
+fromName['RUSSIA'] = fromName['RUSSIAN FEDERATION'];
+fromName['IRAN'] = fromName['IRAN, ISLAMIC REPUBLIC OF'];
+fromName['SOUTH KOREA'] = fromName['KOREA, REPUBLIC OF'];
+fromName['THE NETHERLANDS'] = fromName['NETHERLANDS'];
+fromName['SÃO TOMÉ AND PRÍNCIPE'] = fromName['SAO TOME AND PRINCIPE'];
 
 /**
  * Get a country code for a country name. Case-insensitive.
