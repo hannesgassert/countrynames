@@ -9,6 +9,3 @@ assert.ok(countrynames.getAllCodes() instanceof Array);
 assert.ok(countrynames.getAllNames() instanceof Array);
 
 console.log('Passed successfully.');
-
-
-console.log(countrynames.getAllNames());
