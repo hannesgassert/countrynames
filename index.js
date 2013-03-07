@@ -11,23 +11,29 @@ fs.readFileSync(path.join(__dirname, dataFile), 'ascii')
     .forEach(function(line) {
         var row = line.split(';'),
             code = row.pop(),
-            name = row.pop();
+            nameParts = row.pop(),
+            name = '';
 
-        if (code && name) {
+        if (!code || !nameParts) {
+            return;
+        }
+
+        // Make sure we know both "Iran" and "Iran, Islamic Republic of"
+        nameParts.split(/,\s+/).forEach(function(namePart) {
+            name += namePart;
             fromCode[code.toUpperCase()] = name;
             fromName[name.toUpperCase()] = code;
-        }
+            name += ', ';
+        });
 });
 
 // Register a number of name variants and special cases
-fromName['KOSOVO'] = fromName['KOSOVO AND METOHIJA'] = 'XK';
-fromName['MACEDONIA'] = fromName['MACEDONIA (FYROM)'] = fromName['MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF'];
+fromName['KOSOVO'] = fromName['REPUBLIC OF KOSOVO'] = fromName['KOSOVO AND METOHIJA'] = 'XK';
+fromName['MACEDONIA (FYROM)'] = fromName['MACEDONIA'];
 fromName['SYRIA'] = fromName['SYRIAN ARAB REPUBLIC'];
-fromName['VENEZUELA'] = fromName['VENEZUELA, BOLIVARIAN REPUBLIC OF'];
 fromName['REPUBLIC OF THE PHILIPPINES'] = fromName['PHILIPPINES'];
 fromName['UNITED STATES OF AMERICA'] = fromName['UNITED STATES'];
 fromName['RUSSIA'] = fromName['RUSSIAN FEDERATION'];
-fromName['IRAN'] = fromName['IRAN, ISLAMIC REPUBLIC OF'];
 fromName['SOUTH KOREA'] = fromName['KOREA, REPUBLIC OF'];
 fromName['THE NETHERLANDS'] = fromName['NETHERLANDS'];
 fromName['SÃO TOMÉ AND PRÍNCIPE'] = fromName['SAO TOME AND PRINCIPE'];

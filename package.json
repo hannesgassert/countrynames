@@ -1,7 +1,7 @@
 {
   "name": "countrynames",
   "description": "Map country names to ISO 3166-1-alpha-2 country codes and back",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Hannes Gassert <hannes@gassert.ch>",
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     }
   ],
   "readmeFilename": "README.md",
-  "gitHead": "c0e86627cb4f69b76f103f98673ef16aa5868450",
   "main": "index.js",
   "license": "MIT"
 }
