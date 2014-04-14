@@ -41,9 +41,9 @@ countrynames.getCode('BarbaDOS')
 
 ```js
 // Returns 'TONGA'
-countrynames.getCode('TO')
+countrynames.getName('TO')
 // Returns 'RÉUNION'
-countrynames.getCode('re')
+countrynames.getName('re')
 ```
 
 ## exports.getAllCodes()
