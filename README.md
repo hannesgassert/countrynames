@@ -65,7 +65,7 @@ countrynames.getAllCodes();
 
 ```js
 // Returns an array ["AFGHANISTAN", ... "ZIMBABWE", "ÅLAND ISLANDS"]
-countrynames.getAllCodes();
+countrynames.getAllNames();
 ```
 
 ## License 
