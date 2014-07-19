@@ -75,6 +75,23 @@ exports.getName = function(code) {
 };
 
 /**
+ * Get all country information in an array of objects.
+ *
+ * Example:
+ *
+ *   // Returns an array [ { code: "AD", name: "ANDORA" }, ..., { code: "ZW", name: "ZIMBABWE" } ]
+ *   countrynames.getAll();
+ *
+ * @return {Array} All two-letter country codes and names defined in the ISO standard
+ * @api public
+ */
+exports.getAll = function() {
+    return Object.keys(fromCode).slice(1).sort().map(function(code, index){
+        return { 'code': code, 'name': fromCode[code] };
+    });
+}
+
+/**
  * Get a country name for a country code. Case-insensitive.
  *
  * Example:
