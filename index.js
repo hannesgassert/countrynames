@@ -32,7 +32,7 @@ fromName['KOSOVO'] = fromName['REPUBLIC OF KOSOVO'] = fromName['KOSOVO AND METOH
 fromName['MACEDONIA (FYROM)'] = fromName['MACEDONIA'];
 fromName['SYRIA'] = fromName['SYRIAN ARAB REPUBLIC'];
 fromName['REPUBLIC OF THE PHILIPPINES'] = fromName['PHILIPPINES'];
-fromName['UNITED STATES OF AMERICA'] = fromName['UNITED STATES'];
+fromName['UNITED STATES OF AMERICA'] = fromName['USA'] = fromName['UNITED STATES'];
 fromName['RUSSIA'] = fromName['RUSSIAN FEDERATION'];
 fromName['SOUTH KOREA'] = fromName['KOREA, REPUBLIC OF'];
 fromName['THE NETHERLANDS'] = fromName['NETHERLANDS'];
